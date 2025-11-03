@@ -56,7 +56,6 @@ module "target_bucket_access_logs_bucket" {
   count = var.target_bucket_access_logs_bucket_name != null ? 0 : 1
 
   s3_access_logs_bucket_name    = local.target_bucket_access_logs_bucket_name
-  create_dynamodb_tf_state_lock = false
   create_s3_tf_state_bucket     = false
   tags                          = var.tags
 }
