@@ -1,6 +1,6 @@
 module "target_bucket" {
   source      = "fivexl/account-baseline/aws//modules/s3_baseline"
-  version     = "2.0.0"
+  version     = "2.1.6"
   bucket_name = local.target_bucket_name
 
   logging = {
@@ -51,7 +51,7 @@ module "target_bucket" {
 
 module "target_bucket_access_logs_bucket" {
   source  = "fivexl/account-baseline/aws//modules/region_level"
-  version = "2.0.0"
+  version = "2.1.6"
 
   count = var.target_bucket_access_logs_bucket_name != null ? 0 : 1
 
