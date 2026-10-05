@@ -74,6 +74,9 @@ module "s3_server_access_logs_lake_secondary" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_create_ebs_encryption_by_default"></a> [create\_ebs\_encryption\_by\_default](#input\_create\_ebs\_encryption\_by\_default) | Whether the access logs bucket module should also manage EBS encryption by default for the region. Set to false if another module already manages it. | `bool` | `true` | no |
+| <a name="input_create_ebs_snapshot_block_public_access"></a> [create\_ebs\_snapshot\_block\_public\_access](#input\_create\_ebs\_snapshot\_block\_public\_access) | Whether the access logs bucket module should also manage EBS snapshot block public access for the region. Set to false if another module already manages it. | `bool` | `true` | no |
+| <a name="input_create_ssm_block_public_sharing"></a> [create\_ssm\_block\_public\_sharing](#input\_create\_ssm\_block\_public\_sharing) | Whether the access logs bucket module should also block public sharing of SSM documents in the region. Set to false if another module already manages it. | `bool` | `true` | no |
 | <a name="input_glue_database_name"></a> [glue\_database\_name](#input\_glue\_database\_name) | The name of the Glue database to create for the S3 access logs. | `string` | n/a | yes |
 | <a name="input_logs_bucket_lifecycle_rule"></a> [logs\_bucket\_lifecycle\_rule](#input\_logs\_bucket\_lifecycle\_rule) | The lifecycle rule for the logs bucket | `any` | `{}` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | (Optional) Key-value map of resource tags | `map(string)` | `{}` | no |
