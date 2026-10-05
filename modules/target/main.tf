@@ -55,9 +55,14 @@ module "target_bucket_access_logs_bucket" {
 
   count = var.target_bucket_access_logs_bucket_name != null ? 0 : 1
 
-  s3_access_logs_bucket_name    = local.target_bucket_access_logs_bucket_name
-  create_s3_tf_state_bucket     = false
-  tags                          = var.tags
+  s3_access_logs_bucket_name = local.target_bucket_access_logs_bucket_name
+  create_s3_tf_state_bucket  = false
+
+  create_ebs_snapshot_block_public_access = var.create_ebs_snapshot_block_public_access
+  create_ebs_encryption_by_default        = var.create_ebs_encryption_by_default
+  create_ssm_block_public_sharing         = var.create_ssm_block_public_sharing
+
+  tags = var.tags
 }
 
 
